@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1e293b;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            background-color: #1e293b;
+            padding: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 0px;
+            font-size: 2.5em;
+        }
+        p {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        label {
+            color: #fff;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 130%;
+            box-sizing: border-box;
+            color: #fff;
+            background-color: #2d4059;
+            border-radius: 15px;
+            border : 2px solid #fff;
+            outline: none;
+            font-size: 1em;
+        }
+        button {
+            align-self: center;
+            padding: 10px;
+            background-color: #4F46E5;
+            color: #fff;
+            width: 70%;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        a {
+            color: #4F46E5;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        .for {
+            color: #4F46E5;
+            text-decoration: none;
+            font-size: 1em;
+            align-self: flex-end;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #4F46E5;
+            margin: 15px 0;
+        }
+        .link {
+            font-size: 1em;
+            color: #ccc;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Welcome</h1>
+        <p>Sign in to continue</p>
+
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <label for="regNo">Registration No</label>
+            <input type="text" id="regNo" name="regNo" placeholder="Enter Registration No">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+            <p class="for"><a href="#" style="color: #4F46E5;">Forget Password?</a></p>
+            
+            <!-- Error message container -->
+            <div id="error-message" class="error-message"></div>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <div class="link">
+            <span>I'm a new user. </span>
+            <a href="signup.html" onclick="navigateToLogin()">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var regNo = document.getElementById("regNo").value;
+            var password = document.getElementById("password").value;
+            function navigateToLogin() {
+            // Implement your navigation logic here
+            alert("Navigate to login clicked");
+            }
+
+            if (regNo === "" || password === "") {
+                alert("Please enter details in both fields.");
+                return false;
+            }
+
+            if (regNo !== "validUsername" || password !== "validPassword") {
+                alert("Invalid details. Please check your Registration No and Password.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
